@@ -93,3 +93,19 @@ dialog.contact{margin:auto}
 .tile{flex-direction:column;align-items:stretch}
 .tile-photo{aspect-ratio:4/3;overflow:hidden}
 .tile-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+:root{--buy:#e8590c}
+.btn.buy{background:var(--buy);color:#fff;border-color:var(--buy)}
+.tile{position:relative}
+.tile-link{position:absolute;inset:0;z-index:1}
+.tile .buy{position:relative;z-index:2;padding:8px 18px}
+.tile .cap .acts{display:flex;align-items:center;gap:10px;flex:none}
+.pagehead .buy{margin-top:20px}
+.options{display:grid;gap:14px;margin:24px 0}
+.opt{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;text-align:left;font:inherit;cursor:pointer;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 26px;transition:transform .15s,border-color .15s}
+.opt:hover{transform:translateY(-2px);border-color:var(--buy)}
+.opt b{font-size:18px}.opt span{color:var(--buy);font-weight:700;font-size:18px;white-space:nowrap}
+.notes{color:var(--muted);padding-left:20px;display:grid;gap:8px}
+.notes a{color:var(--buy);font-weight:600;text-decoration:underline}
+.tile .cap .buy{margin-top:14px}
+.tile .cap .arrow{align-self:center}

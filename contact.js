@@ -10,6 +10,8 @@ dlg.innerHTML = `
 <form id="cf" novalidate>
   <label>Your name<input name="name" required autocomplete="name"></label>
   <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+  <label>WhatsApp / Phone number<input name="phone" type="tel" autocomplete="tel"></label>
+  <label class="cf-addr" hidden>Delivery address<textarea name="address" rows="2"></textarea></label>
   <label>Message<textarea name="message" rows="5" required></textarea></label>
   <input type="hidden" name="_subject" value="New message from the HueBelieve website">
   <input type="hidden" name="_template" value="table">
@@ -27,6 +29,11 @@ document.addEventListener("click", (e) => {
   if (!t) return;
   e.preventDefault();
   status.textContent = "";
+  const interest = t.dataset.interest;
+  dlg.querySelector(".cf-addr").hidden = !interest;
+  dlg.querySelector("h3").textContent = interest ? "Buy" : "Say hi";
+  form.message.value = interest ? `Hello- I am interested in ${interest}. Please let me know the next steps` : "";
+  form._subject.value = interest ? `Purchase enquiry: ${interest}` : "New message from the HueBelieve website";
   dlg.showModal();
 });
 dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
