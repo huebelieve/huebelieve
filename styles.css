@@ -115,3 +115,13 @@ dialog.contact{margin:auto}
 .action-row img,.action-row video{height:420px;width:auto;max-width:100%;border-radius:20px;display:block;object-fit:cover;background:#000}
 .action-row figcaption{margin-top:10px;max-width:560px}
 @media(max-width:700px){.action-row img,.action-row video{height:auto;width:100%}.action-row figure{width:100%}}
+.action-row.tight{flex-wrap:nowrap}
+.action-row.tight figure{min-width:0}
+.action-row.tight figure:nth-child(1){flex:1.793 1 0}
+.action-row.tight figure:nth-child(2){flex:1.333 1 0}
+.action-row.tight figure:nth-child(3){flex:.616 1 0}
+.action-row.tight img,.action-row.tight video{width:100%;height:auto}
+.action-row.tight figure:nth-child(1) video{aspect-ratio:832/464}
+.action-row.tight figure:nth-child(2) img{aspect-ratio:4/3}
+.action-row.tight figure:nth-child(3) img{aspect-ratio:580/941}
+@media(max-width:700px){.action-row.tight{flex-wrap:wrap}.action-row.tight figure{flex:1 1 100%!important}}
